@@ -18,8 +18,23 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
+        'Mojolicious'       => 4.72,
         'XML::Hash::LX'     => 0.0603,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Mojolicious-Plugin-XML-LX-*' },
+    META_MERGE   => {
+        'meta-spec'    => {version => 2},
+        dynamic_config => 0,
+        resources      => {
+            bugtracker => {web => 'https://github.com/rshadow/mojolicious-plugin-lx/issues'},
+            homepage   => 'https://github.com/rshadow/mojolicious-plugin-lx',
+            license    => ['http://www.opensource.org/licenses/artistic-license-2.0'],
+            repository => {
+                type => 'git',
+                url  => 'https://github.com:rshadow/mojolicious-plugin-lx.git',
+                web  => 'https://github.com/rshadow/mojolicious-plugin-lx',
+            },
+        },
+    },
 );
