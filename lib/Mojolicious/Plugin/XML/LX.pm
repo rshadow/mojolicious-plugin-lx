@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use XML::LibXML;
 use XML::Hash::LX   qw(hash2xml);
@@ -55,7 +55,7 @@ to support simple XML response from HASH.
 
     $self->render(xml => {
         response => {
-            status  => 'ok',
+            -status => 'ok',
             message => 'hello world!',
         }
     });
@@ -63,9 +63,8 @@ to support simple XML response from HASH.
     # You get:
 
     <?xml version="1.0" encoding="utf-8"?>
-    <response>
+    <response status="ok">
         <message>hello world!</message>
-        <status>ok</status>
     </response>
 
 

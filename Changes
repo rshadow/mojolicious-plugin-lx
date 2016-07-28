@@ -1,5 +1,8 @@
 Revision history for Mojolicious-Plugin-XML-LX
 
+0.03    28-07-2016
+        Fix pod to show attributes
+
 0.02    13-07-2016
         Fix test and meta
 

@@ -8,7 +8,7 @@ use lib qw(lib ../lib);
 
 use Mojolicious::Lite;
 use Test::Mojo;
-use Test::More tests => 4;
+use Test::More tests => 5;
 
 {
     package MyApp;
@@ -24,7 +24,8 @@ note 'Simple response test';
     $t->app->routes->any("/test")->to( format => 'xml', cb => sub {
         $_[0]->render(xml => {
             response => {
-                status  => 'ok',
+                -status => 'ok',
+                message => 'hello world!',
             }
         });
     });
@@ -32,7 +33,8 @@ note 'Simple response test';
     $t  -> get_ok("/test")
         -> content_type_is('application/xml')
         -> element_exists('response')
-        -> text_is('response > status', 'ok')
+        -> element_exists('response[status="ok"]')
+        -> text_is('response > message', 'hello world!')
     ;
 
     diag Encode::decode_utf8 $t->tx->res->body unless $t->tx->success;
