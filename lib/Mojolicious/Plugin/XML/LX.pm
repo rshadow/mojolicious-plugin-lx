@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '1.0';
 
 use XML::LibXML;
 use XML::Hash::LX   qw(hash2xml);
@@ -53,6 +53,13 @@ to support simple XML response from HASH.
 
 =head1 SYNOPSIS
 
+    # Mojolicious
+    $app->plugin('XML::LX');
+
+    # Mojolicious::Lite
+    plugin 'XML::LX';
+
+    # Controller
     $self->render(xml => {
         response => {
             -status => 'ok',

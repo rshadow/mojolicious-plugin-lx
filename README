@@ -1,25 +1,42 @@
 Mojolicious-Plugin-XML-LX
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+Is a plugin to support simple XML response from HASH
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+Based on L<XML::Hash::LX> companion for L<XML::LibXML>.
 
+All configuration parameters apply to L<XML::Hash::LX::hash2xml()>.
+
+SYNOPSIS
+
+    # Mojolicious
+    $app->plugin('XML::LX');
+
+    # Mojolicious::Lite
+    plugin 'XML::LX';
+
+    # Controller
+    $self->render(xml => {
+        response => {
+            -status => 'ok',
+            message => 'hello world!',
+        }
+    });
+
+    # You get:
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <response status="ok">
+        <message>hello world!</message>
+    </response>
 
 INSTALLATION
 
 To install this module, run the following commands:
 
-	perl Makefile.PL
-	make
-	make test
-	make install
+    perl Makefile.PL
+    make
+    make test
+    make install
 
 SUPPORT AND DOCUMENTATION
 
