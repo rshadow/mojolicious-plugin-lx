@@ -1,0 +1,17 @@
+Makefile.old
+Build
+Build.bat
+MYMETA.*
+.build/
+_build/
+blib/
+.lwpcookies
+.last_cover_stats
+nytprof.out
+Mojolicious-Plugin-XML-LX-*
+Mojolicious-Plugin-XML-LX-*.tar.gz
+.project
+.includepath
+.git
+MANIFEST.bak
+ignore.txt
